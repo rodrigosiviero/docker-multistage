@@ -11,24 +11,40 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #2a0044;
-  background-color: #2a0044; }
-
+  background: #25013C;
+  background-color: #25013C;
+  }
+.logo {
+  margin-bottom: 0px;
+  position: absolute;
+  z-index: 60000;
+  float: none;
+  padding-top: 0px;
+   padding-right: 0px;
+   padding-bottom: 0px;
+   padding-left: 0px;
+}
 .reveal {
   font-family: 'Raleway', sans-serif;
   font-size: 42px;
   font-weight: normal;
-  color: #fff; }
+  color: #fff;
+  }
 
 ::selection {
   color: #fff;
   background: #bee4fd;
-  text-shadow: none; }
+  text-shadow: none;
+  margin-top: 0px;
+  margin-left: 0px;
+  }
 
 ::-moz-selection {
   color: #fff;
   background: #bee4fd;
-  text-shadow: none; }
+  text-shadow: none;
+  margin: 0px;
+  margin-left: 0px;}
 
 .reveal .slides > section,
 .reveal .slides > section > section {
