@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="pt-BR">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -32,7 +32,7 @@
 					<ul>
 						<li>Releases todo mês</li>
 						<li>Testar novas features</li>
-						<li>Sem Suporte oficial</li>
+						<li>Sem suporte oficial</li>
 					</ul>
 					<img src="images/dockeredge.png"/>
 				</section>
@@ -42,16 +42,16 @@
 					<h4>Docker Multi-stage Build</h4>
 					<ul>
 						<li>Dockerfile com multiplas declarações <i>FROM</i></li>
-						<li>Ultimo <i>FROM</i> contém a imagem final</li>
-						<li>Imagens intermediarios são descartados</li>
-						<li>Artefatos podem ser copiados através das imagens intermediarios</li>
+						<li>Último <i>FROM</i> contém a imagem final</li>
+						<li>Imagens intermediárias são descartados</li>
+						<li>Artefatos podem ser copiados através das imagens intermediárias</li>
 						<li>Imagens podem receber nomes</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Multiplas declarações<i>FROM</i></h2>
 					<pre><code class="hljs" data-trim contenteditable>
-						FROM rodrigosiviero/mvn-jdk-cscod as builder
+						 FROM rodrigosiviero/mvn-jdk-cscod as builder
 						 ADD . /tmp/my-app/
 						 WORKDIR /tmp/my-app/
 						 RUN mvn package
@@ -62,11 +62,11 @@
 						 RUN mvn sonar:sonar -Dsonar.host.url=http://192.168.1.38:9000
 
 						 FROM tomcat:alpine as webcontainer
-						 COPY --from=builder /target/my-app.war webapps/my-app.war
+						 COPY --from=builder /tmp/my-app/target/my-app.war /usr/local/tomcat/webapps/my-app.war
 					</code></pre>
 				</section>
 				<section>
-					<h2>Ultimo <i>FROM</i> contém a imagem final</h2>
+					<h2>Último <i>FROM</i> contém a imagem final</h2>
 					<img src="images/from.png"/>
 				</section>
 				<section>
@@ -97,10 +97,10 @@
 			<section>
 				<h2>Hands-On!</h2>
 			  <p> Entre em http://play-witch-docker.com</p>
-			  <p> Crio um novo ambiente</p>
+			  <p> Crio uma nova instância</p>
 			  <p>Clone o repositório com a aplicação de exemplo</p>
 			  <pre><code class="hljs" data-trim contenteditable>
-			      git clone https://cs-rodrigo-siviero@bitbucket.org/cs-rodrigo-siviero/pwd-multistage.git
+			      git clone https://cs-rodrigo-siviero@bitbucket.org/cs-rodrigo-siviero/helloworld-multistage.git
 			  </code></pre>
 			</section>
 			<section>
@@ -113,7 +113,7 @@
 			    RUN mvn package
 
 			    FROM tomcat:alpine as webcontainer
-			    COPY --from=builder /target/my-app.war webapps/my-app.war
+			    COPY --from=builder /tmp/my-app/target/my-app.war /usr/local/tomcat/webapps/my-app.war
 			  </code></pre>
 			</section>
 			<section>
@@ -127,9 +127,22 @@
 				</code></pre>
 			</section>
 			<section>
-				<p> Faça o teste clicando na porta 8888 na parte superior do play-with-docker</p>
+				<p>Faça o teste clicando na porta 8888 na parte superior do play-with-docker</p>
+				<img src="images/port.png"/>
+				<p>Adicione o path no final da url /my-app</p>
 			</section>
 		</section>
+		<section>
+		<section>
+			<h1>Obrigado!</h1>
+		</section>
+		<section>
+			<h2>Referências</h2>
+			<p>https://docs.docker.com/engine/userguide/eng-image/multistage-build/</p>
+			<p>http://blog.arungupta.me/smaller-java-image-docker-multi-stage-build/</p>
+			<p>http://blog.alexellis.io/mutli-stage-docker-builds/</p>
+		</section>
+	</section>
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
