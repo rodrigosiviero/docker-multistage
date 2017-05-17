@@ -12,10 +12,15 @@ section.has-light-background, section.has-light-background h1, section.has-light
  *********************************************/
 body {
   background: #25013C;
-  background-color: #25013C; }
+  background-color: #25013C;
+  }
 .logo {
-  margin: 0px;
+  margin-bottom: 0px;
   float: none;
+  padding-top: 0px;
+   padding-right: 0px;
+   padding-bottom: 0px;
+   padding-left: 0px;
 
 }
 .reveal {
@@ -29,12 +34,16 @@ body {
   color: #fff;
   background: #bee4fd;
   text-shadow: none;
+  margin-top: 0px;
+  margin-left: 0px;
   }
 
 ::-moz-selection {
   color: #fff;
   background: #bee4fd;
-  text-shadow: none; }
+  text-shadow: none;
+  margin: 0px;
+  margin-left: 0px;}
 
 .reveal .slides > section,
 .reveal .slides > section > section {
