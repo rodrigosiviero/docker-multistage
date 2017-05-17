@@ -14,13 +14,12 @@ body {
   background: #25013C;
   background-color: #25013C;
   }
-.logo {
-  margin-bottom: 0px;
-  float: none;
-  padding-top: 0px;
-   padding-right: 0px;
-   padding-bottom: 0px;
-   padding-left: 0px;
+body img.logo {
+  margin-top: 30px;
+  margin-left: 50px;
+  display: block;
+   z-index: 60000;
+   position: absolute;
 
 }
 .reveal {
